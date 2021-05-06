@@ -96,7 +96,7 @@ function operate(operator, firstArg, secondArg){
             operatorSpan.textContent = value;
             checkIfEvilAll();
         }
-     }
+     }    /* +-/*的按鍵 ，讓他可以出來 */
 
     const eqlBtn = document.getElementById('equals');
 
@@ -104,7 +104,7 @@ function operate(operator, firstArg, secondArg){
         halfProduct *= 100000;
         halfProduct = Math.round(halfProduct)
         return halfProduct / 100000
-    }
+    }    /* 小數點 */
 
     eqlBtn.onclick = function(){
         if (firstOperandSpan.textContent != '' && operatorSpan.textContent != '' && secondOperandSpan.textContent != ''){
@@ -117,7 +117,7 @@ function operate(operator, firstArg, secondArg){
         } else {
             console.log("Wat u doin mon?");
         }
-    }
+    }    /* =的功能 */
 
     const clearBtn = document.getElementById('clear');
 
@@ -127,7 +127,7 @@ function operate(operator, firstArg, secondArg){
         secondOperandSpan.textContent = '';
         answerZone.textContent = '';
         checkIfEvilAll();
-    }
+    }   /* 清除 */
 
     const backspaceBtn = document.getElementById('backspace');
     backspaceBtn.onclick = function(){
@@ -140,7 +140,7 @@ function operate(operator, firstArg, secondArg){
         } else {
             console.log("It seems you are pushing the backspace button regardless of the fact that there's nothing to clear. Hope you enjoy it!")
         } checkIfEvilAll();
-    }
+    }   /* <--的功能 */
 
     const dotBtn = document.getElementById('dot');
     dotBtn.onclick = function(){
@@ -160,7 +160,7 @@ function operate(operator, firstArg, secondArg){
                 secondOperandSpan.textContent += '.'
             }
         }   checkIfEvilAll();
-    }
+    }       /* 小數點的功能 */
 
     const partyBtn = document.getElementById('vodka');
     
@@ -178,7 +178,7 @@ function operate(operator, firstArg, secondArg){
         } checkIfEvilAll();
     }
 
-    window.onkeydown = function(event){     // keyboard suppor. It's goddamn long.
+    window.onkeydown = function(event){
         let x = event.key;
         let chosenOne;
         let group;
@@ -266,7 +266,7 @@ function operate(operator, firstArg, secondArg){
             case 'Escape':
                 chosenOne = document.querySelector('#clear');
                 group = 'shadow';
-                break; //it's not wet. It's a flood! sigh
+                break; 
         }   if (chosenOne != undefined){
                 chosenOne.click();
                 chosenOne.classList.add(group);
